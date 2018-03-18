@@ -3,6 +3,10 @@ html {
   font-size: 16px;
 }
 
+body {
+  margin: 0;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -17,13 +21,16 @@ header .content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
 }
 
-header .logo {
+header .logo a {
+  display: flex;
+  align-items: center;
   text-transform: uppercase;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 nav {
@@ -36,14 +43,13 @@ nav ul, footer ul {
 }
 
 nav li, footer li {
-  padding-left: 1rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
 nav a {
   vertical-align: bottom;
-  line-height: 1.6;
-  color: #4a4a4a;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 header .mobile {
@@ -52,13 +58,30 @@ header .mobile {
 
 a {
   text-decoration: none;
-  color: inherit;
+}
+
+@media only screen and (max-width: 760px) {
+header .desktop {
+  display: none;
+}
+header .mobile {
+    display: block;
+    width: 100%;
+}
+header .content {
+  margin-left: 0;
+}
+nav ul {
+  justify-content: space-between;
+}
+nav li {
+  padding: 0;
+}
 }
 
 .main-content {
   position: relative;
   top: 4rem;
-  padding: 0 5%;
 }
 
 #learn-something, #keep-practicing {
@@ -97,6 +120,29 @@ a {
   display: block;
 }
 
+#learn-something, #start-learning {
+  padding-top: 2rem;
+  background-color: whitesmoke;
+}
+
+@media only screen and (max-width: 760px) {
+#learn-something {
+  flex-direction: column;
+  padding: 0;
+}
+.main-image {
+  width: 100%;
+  padding: 0;
+}
+.cta {
+  width: 100%;
+}
+.cta div {
+  width: 100%;
+  padding: 1rem;
+}
+}
+
 .quote {
   width: 60%;
   padding: 0 1.5rem;
@@ -104,11 +150,6 @@ a {
 
 .quote img {
   width: 100%;
-}
-
-#learning-something, #start-learning {
-  padding-top: 2rem;
-  background-color: whitesmoke;
 }
 
 #events {
@@ -133,6 +174,22 @@ a {
 .event div {
   width: 65%;
   padding: 1rem;
+}
+
+@media only screen and (max-width: 760px) {
+  .quote {
+    display: none;
+  }
+  #events {
+    width: 100%;
+  }
+  .event {
+    flex-direction: column;
+  }
+  #events img {
+    width: 100%;
+    height: auto;
+  }
 }
 
 span {
@@ -171,12 +228,38 @@ span {
   margin: .5rem 0;
 }
 
+@media only screen and (max-width: 760px) {
+#start-learning {
+  background-color: white;
+}
+  .desktop-courses {
+    flex-direction: column;
+}
+  .course {
+    width: 100%;
+    padding: 1rem 0 1.5rem 1rem;
+    margin: .5rem;
+    background-color: whitesmoke;
+  }
+  .course img {
+    display: none;
+  }
+
+.course div {
+  padding: 0;
+}
+  .course span {
+    display: none;
+  }
+}
+
 #thesis-exhibit {
   padding-top: 2rem;
 }
 
 .container {
   display: flex;
+  padding: 0 1.5rem;
 }
 
 .reimagine-urban {
@@ -199,10 +282,43 @@ span {
   padding-left: 1rem;
   padding-bottom: 1rem;
 }
+@media only screen and (max-width: 760px) {
+  .container {
+    flex-direction: column;
+  }
+  .reimagine-urban {
+    width: 100%;
+    padding: 0;
+  }
+  .reimagine-urban h3, .reimagine-urban span {
+    display: none;
+  }
+  .theses {
+    display: none;
+  }
+}
 
+footer {
+  background-color: whitesmoke;
+  height: 4rem;
+}
 footer .content {
-  padding: 1rem 1.5rem;
+  position: relative;
+  margin: 1rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+footer span {
+  padding-left: 1.5rem;
+}
+
+@media only screen and (max-width: 760px) {
+footer {
+  padding: 1rem;
+}
+  footer ul {
+    display: none;
+  }
 }
