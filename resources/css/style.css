@@ -1,20 +1,58 @@
+/* Universal Styles */
+
 html {
   font-family: "Roboto", sans-serif;
   font-size: 16px;
+  color: #262626;
 }
 
 body {
   margin: 0;
 }
 
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #1140AD;
+  font-weight: 700;
+}
+
+span {
+  display: block;
+  padding-bottom: 1.5rem;
+}
+
+.quotation {
+  font-size: 1.25rem;
+}
+
+@media only screen and (max-width: 760px) {
+body {
+  overflow-x: hidden;
+}
+}
+
+/* Header */
+
 header {
-  position: fixed;
   width: 100%;
   background-color: white;
   z-index: 1;
   top: 0;
   left: 0;
-  height: 4rem;
+  padding: 1rem 0;
 }
 
 header .content {
@@ -31,6 +69,7 @@ header .logo a {
   text-transform: uppercase;
   font-size: 1.5rem;
   padding-left: 1.5rem;
+  color: #262626;
 }
 
 nav {
@@ -50,43 +89,53 @@ nav li, footer li {
 nav a {
   vertical-align: bottom;
   font-size: 1rem;
+  color: #262626;
+  font-weight: 400;
 }
 
 header .mobile {
   display: none;
-}
-
-a {
-  text-decoration: none;
 }
 
 @media only screen and (max-width: 760px) {
 header .desktop {
   display: none;
 }
+
+header {
+  padding: 0;
+}
+
 header .mobile {
     display: block;
     width: 100%;
 }
+
 header .content {
   margin-left: 0;
 }
 nav ul {
   justify-content: space-between;
 }
+
 nav li {
   padding: 0;
 }
 }
 
-.main-content {
-  position: relative;
-  top: 4rem;
-}
+/* Learn something section */
 
 #learn-something, #keep-practicing {
   display: flex;
   padding: 2rem 1.5rem;
+}
+
+#learn-something {
+  padding-top: 0;
+  padding-bottom: 0;
+  background-color: whitesmoke;
+  background-color: #5177D0;
+  color: white;
 }
 
 .main-image {
@@ -96,13 +145,14 @@ nav li {
 
 .main-image img {
   width: 100%;
+  height: 100%;
 }
 
 .cta {
-  width: 40%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  width: 40%;
 }
 
 .cta div {
@@ -110,9 +160,13 @@ nav li {
   padding: 2rem;
 }
 
+.cta span {
+  width: inherit;
+}
+
 .button {
   width: 80%;
-  background-color: #4a4a4a;
+  background-color: #1140AD;
   color: #ffffff;
   padding: 1rem;
   text-align: center;
@@ -120,28 +174,34 @@ nav li {
   display: block;
 }
 
-#learn-something, #start-learning {
-  padding-top: 2rem;
-  background-color: whitesmoke;
-}
-
 @media only screen and (max-width: 760px) {
+
 #learn-something {
   flex-direction: column;
   padding: 0;
 }
+
 .main-image {
   width: 100%;
   padding: 0;
 }
+
 .cta {
   width: 100%;
 }
+
 .cta div {
-  width: 100%;
   padding: 1rem;
+  width: auto;
+}
+
+.button {
+  width: unset;
+  margin: 0 0 1rem 0;
 }
 }
+
+/* Keep practicing section */
 
 .quote {
   width: 60%;
@@ -162,8 +222,12 @@ nav li {
 #events img, .thesis img {
   width: 35%;
   height: 35%;
-  margin: 1rem;
+  margin: 0 1rem;
 }
+
+#events .mobile {
+  display: none;
+  }
 
 .event {
   display: flex;
@@ -173,27 +237,58 @@ nav li {
 
 .event div {
   width: 65%;
-  padding: 1rem;
+  padding: 0 1rem 2rem 1rem;
 }
 
 @media only screen and (max-width: 760px) {
+#keep-practicing {
+  padding: 1rem;
+  border-bottom: 1px solid whitesmoke;
+}
   .quote {
     display: none;
   }
+
   #events {
     width: 100%;
+    padding-top: 1rem;
   }
-  .event {
-    flex-direction: column;
-  }
+
+  #events .desktop {
+    display: none;
+    }
+
+  #events .mobile {
+    display: block;
+    }
+
   #events img {
     width: 100%;
     height: auto;
+    margin: 0;
+  }
+
+  .event {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .event div {
+    width: auto;
+    padding: 0 1rem 2rem 0;
+  }
+
+  .event h3 {
+    margin-top: 1rem;
   }
 }
 
-span {
-  display: block;
+/* Start learning section */
+
+#start-learning {
+  padding-top: 2rem;
+  background-color: whitesmoke;
+  padding-bottom: 2rem;
 }
 
 #start-learning h2, #thesis-exhibit h2 {
@@ -201,7 +296,7 @@ span {
   margin-bottom: 2rem;
 }
 
-.desktop-courses {
+.courses {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -216,7 +311,11 @@ span {
 }
 
 .course div, .thesis div {
-  padding: 1rem;
+  padding: 0 1rem 2rem 1rem;
+}
+
+.course h3 {
+  margin-top: .5rem;
 }
 
 .course img {
@@ -225,33 +324,60 @@ span {
 
 .category {
   text-transform: uppercase;
-  margin: .5rem 0;
+  margin: .5rem 0 1rem 0;
+  background-color: #5177D0;
+  width: fit-content;
+  color: white;
+  padding: .5rem;
+  font-size: .75rem;
+  font-weight: 700;
 }
 
 @media only screen and (max-width: 760px) {
 #start-learning {
   background-color: white;
+  padding: 2rem 1rem;
+  border-bottom: 1px solid whitesmoke;
 }
-  .desktop-courses {
+
+  .courses {
     flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 1rem;
 }
+
   .course {
     width: 100%;
-    padding: 1rem 0 1.5rem 1rem;
-    margin: .5rem;
-    background-color: whitesmoke;
+    background-color: #1140AD;
+    margin-bottom: .5rem;
+    padding: 1rem;
+    color: white;
+    font-weight: 700;
   }
+
   .course img {
     display: none;
   }
 
+
 .course div {
   padding: 0;
 }
+
+.course h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
   .course span {
     display: none;
   }
 }
+
+/* Thesis exhibit section */
 
 #thesis-exhibit {
   padding-top: 2rem;
@@ -264,7 +390,7 @@ span {
 
 .reimagine-urban {
   width: 60%;
-  padding: 0 1.5rem;
+  padding: 0 1.5rem 2rem 1.5rem;
 }
 
 .reimagine-urban video {
@@ -286,27 +412,34 @@ span {
   .container {
     flex-direction: column;
   }
+
   .reimagine-urban {
     width: 100%;
     padding: 0;
+    margin-bottom: 2rem;
   }
+
   .reimagine-urban h3, .reimagine-urban span {
     display: none;
   }
+
   .theses {
     display: none;
   }
 }
 
+/* Footer */
+
 footer {
   background-color: whitesmoke;
-  height: 4rem;
+  padding: 1rem 0;
 }
+
 footer .content {
   position: relative;
   margin: 1rem 1.5rem;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 
@@ -314,11 +447,17 @@ footer span {
   padding-left: 1.5rem;
 }
 
-@media only screen and (max-width: 760px) {
-footer {
-  padding: 1rem;
+footer a {
+  color: #262626;
+  font-weight: 400;
 }
+
+@media only screen and (max-width: 760px) {
   footer ul {
     display: none;
+  }
+
+  footer span {
+    padding: 0;
   }
 }
