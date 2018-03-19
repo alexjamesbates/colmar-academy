@@ -397,6 +397,10 @@ nav li {
   width: 100%;
 }
 
+.reimagine-urban h3 {
+  margin-top: 1rem;
+}
+
 .theses {
   display: flex;
   flex-direction: column;
